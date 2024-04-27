@@ -32,7 +32,13 @@
 		</div>
 
 		<div class="row">
-			
+            @if(session('success'))
+            <div class="notification success large">
+                <strong>Yey.. Berhasil nih!</strong>
+                <p>{{ session('success') }}</p>
+            </div>
+            @endif
+
 			<!-- Listings -->
 			<div class="col-lg-12 col-md-12">
 				<div class="dashboard-list-box margin-top-0">
@@ -44,11 +50,10 @@
 								<ul>
 									<li>
 										<div class="avatar"><img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&amp;s=70" alt="" /></div>
-										<div class="comment-content">
-                                            <div class="arrow-comment"></div>
+										<div class="comment-content"><div class="arrow-comment"></div>
 											<div class="comment-by">{{$user->name}} <div class="comment-by-listing">role sebagai <a href="#">{{$user->role}}</a></div> <span class="date">Terdaftar Pada: {{$user->created_at}}</span></div>
-											<a href="#small-dialog" class="rate-review popup-with-zoom-anim"><i class="sl sl-icon-note"></i> Edit</a>
-                                            <a href="#small-dialog" class="rate-review popup-with-zoom-anim"><i class="sl sl-icon-close"></i> Delete</a>
+											<a href="{{route('users.edit', $user)}}" class="rate-review"><i class="sl sl-icon-note"></i> Edit</a>
+                                            <a href="{{route('users.destroy', $user)}}" class="rate-review"><i class="sl sl-icon-close"></i> Delete</a>
 										</div>
 									</li>
 								</ul>
@@ -63,7 +68,7 @@
 				</div>
 			</div>
 
-            <a href="{{route('categories.create')}}" class="button preview">Tambah User <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{route('users.create')}}" class="button preview">Tambah User <i class="fa fa-arrow-circle-right"></i></a>
 
 			<!-- Copyrights -->
 			<div class="col-md-12">

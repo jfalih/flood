@@ -36,7 +36,7 @@
 			<!-- Item -->
 			<div class="col-lg-3 col-md-6">
 				<div class="dashboard-stat color-3">
-					<div class="dashboard-stat-content"><h4>{{Auth::user()->trombosit}}</h4><span>Pengajuan Donor</span></div>
+					<div class="dashboard-stat-content"><h4>{{$submissionCount}}</h4><span>Pengajuan Donor</span></div>
 					<div class="dashboard-stat-icon"><i class="im im-icon-Blood"></i></div>
 				</div>
 			</div>
@@ -104,31 +104,28 @@
 				</div>
 			</div>
 		</div>
-        <div class="row">
-            
-
-			<!-- Recent Activity -->
-			<div class="col-lg-6 col-md-12">
-				<div class="dashboard-list-box with-icons">
-					<h4>Aktifitas Kamu</h4>
+        <div class="row">		<!-- Invoices -->
+			<div class="col-lg-12 col-md-12">
+				<div class="dashboard-list-box invoices with-icons margin-top-20">
+					<h4>5 Pengajuan Terakhir</h4>
 					<ul>
-						<li>
-							<i class="list-box-icon sl sl-icon-layers"></i> Daftar menjadi <strong><a href="#">pendonor</a></strong> telah disetujui!
-							<a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
+                        @forelse ($submissions as $sub)
+						<li><i class="list-box-icon sl sl-icon-doc"></i>
+							<strong>{{$sub->user->name}} mengajukan menjadi pendonor di {{$sub->place->name}}</strong>
+							<ul>
+								<li class="pending">{{$sub->status}}</li>
+								<li>Pengajuan:{{$sub->donor_date}}</li>
+							</ul>
+                            <div class="buttons-to-right">
+                                @if($sub->status == "pending")
+                                <a href="{{route('submission.admin.cancel', $sub)}}" class="button gray">Tolak</a>
+                                @endif
+								<a href="{{route('places.detail', $sub->place)}}" class="button gray">Lihat Tempat</a>
+							</div>
 						</li>
-					</ul>
-				</div>
-			</div>
-
-
-			<div class="col-lg-6 col-md-12">
-				<div class="dashboard-list-box with-icons">
-					<h4>Pengajuan Donor</h4>
-					<ul>
-						<li>
-							<i class="list-box-icon sl sl-icon-layers"></i> Daftar menjadi <strong><a href="#">pendonor</a></strong> telah disetujui!
-							<a href="#" class="close-list-item"><i class="fa fa-close"></i></a>
-						</li>
+                        @empty
+                        <li>Ajukan pendonoran terlebih dahulu</li>
+                        @endforelse
 					</ul>
 				</div>
 			</div>

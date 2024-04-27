@@ -45,6 +45,8 @@ Route::middleware(['auth', 'role:user'])->group(function() {
     Route::controller(DashboardController::class)->group(function() {
         Route::get('dashboard', 'dashboard')->name('dashboard');
         Route::get('setting', 'setting')->name('setting');
+        Route::post('profile', 'profile')->name('profile.update');
+        Route::post('change-password', 'changePassword')->name('password.change');
     });
     Route::post('booking/{place}', [SubmissionController::class, 'booking'])->name('booking');
 });
@@ -53,17 +55,19 @@ Route::middleware(['auth', 'role:admin'])->group(function() {
     Route::controller(DashboardController::class)->group(function() {
         Route::get('admin/dashboard', 'dashboardAdmin')->name('dashboard.admin');
     });
+    Route::controller(UserController::class)->group(function() {
+        Route::get('/admin/users', 'index')->name('users.index');
+        Route::get('/admin/users/create', 'create')->name('users.create');
+        Route::post('/admin/users', 'store')->name('users.store');
+        Route::get('/admin/users/{user}/edit', 'edit')->name('users.edit');
+        Route::put('/admin/users/{user}', 'update')->name('users.update');
+        Route::get('/admin/users/{user}/delete', 'destroy')->name('users.destroy');
+    });
     Route::controller(CategoryController::class)->group(function() {
         Route::get('admin/category', 'index')->name('categories.index');
         Route::get('admin/category/create', 'create')->name('categories.create');
         Route::post('admin/category/create', 'store')->name('categories.store');
         Route::delete('admin/categories/{category}', 'destroy')->name('categories.destroy');
-    });
-    Route::controller(UserController::class)->group(function() {
-        Route::get('admin/user', 'index')->name('users.index');
-        Route::get('admin/user/create', 'create')->name('users.create');
-        Route::post('admin/user/create', 'store')->name('users.store');
-        Route::delete('admin/user/{user}', 'destroy')->name('users.destroy');
     });
     Route::controller(PlaceController::class)->group(function() {
         Route::get('admin/place', 'index')->name('place.index');
@@ -76,8 +80,6 @@ Route::middleware(['auth', 'role:admin'])->group(function() {
         Route::get('admin/stock/create', 'create')->name('stocks.create');
         Route::post('admin/stocks/create', 'store')->name('stocks.store');
         Route::delete('admin/stocks/{stock}', 'destroy')->name('stocks.destroy');
-    });
-    Route::controller(SubmissionController::class)->group(function() {
     });
 });
 

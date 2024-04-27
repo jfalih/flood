@@ -49,8 +49,7 @@
 				<!-- Main Navigation -->
 				<nav id="navigation" class="style-1">
 					<ul id="responsive">
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Tentang Kami</a></li>
+						<li><a href="{{route('home')}}">Home</a></li>
 					</ul>
 				</nav>
 				<div class="clearfix"></div>
@@ -194,7 +193,13 @@
 							<div class="listing-item-content">
 								<span class="tag">{{$place->category->name}}</span>
 								<h3>{{$place->name}} <i class="verified-icon"></i></h3>
-								<span>{{$place->address}}</span>
+								<span style="
+                                height: 2em; /* Adjust the height to fit two lines */
+                                overflow: hidden;
+                                display: block;
+
+                                white-space: nowrap; /* Prevent wrapping */
+                                text-overflow: ellipsis; /* Add ellipsis if content overflows */">{{$place->address}}</span>
 							</div>
 						</div>
 					</a>

@@ -47,7 +47,6 @@
 				<nav id="navigation" class="style-1">
 					<ul id="responsive">
 						<li><a href="{{route('home')}}">Home</a></li>
-						<li><a href="#">Tentang Kami</a></li>
 					</ul>
 				</nav>
 				<div class="clearfix"></div>
@@ -261,13 +260,10 @@
             <div class="col-md-4 col-sm-6 ">
 				<h4>Helpful Links</h4>
 				<ul class="footer-links">
-					<li><a href="#">Login</a></li>
-					<li><a href="#">Sign Up</a></li>
+					<li><a href="{{route('login')}}">Login</a></li>
+					<li><a href="{{route('register')}}">Sign Up</a></li>
 				</ul>
 
-				<ul class="footer-links">
-					<li><a href="#">Tentang Kami</a></li>
-				</ul>
 				<div class="clearfix"></div>
 			</div>		
 
