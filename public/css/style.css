@@ -9255,6 +9255,10 @@ a.send-message-to-owner.button {
 	transition: 0.2s;
 	cursor: default;
 }
+.opening-hours ul li p {
+	font-weight: 300;
+	font-size: 14px;
+}
 
 .opening-hours ul li:hover { color: #444; }
 .opening-hours ul li span { float: right; font-weight: 400; }
@@ -15279,7 +15283,9 @@ a.close-list-item {
 /* Image */
 .list-box-listing-img {
 	flex: 1;
-	max-width: 150px;
+	max-height: 200px;
+	object-fit: cover;
+	max-width: 200px;
 	position: relative;
 }
 
