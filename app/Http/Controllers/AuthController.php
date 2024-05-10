@@ -28,7 +28,7 @@ class AuthController extends Controller
         }
  
         return back()
-        ->withInput($request->only('email', 'remember'))
+        ->withInput()
         ->withErrors([
             'email' => 'These credentials do not match our records.',
         ]);
@@ -57,7 +57,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect('/dashboard');
+        return redirect('/dashboard')->withInput();
     }
 
     public function showRegister(Request $request)

@@ -56,71 +56,71 @@
 
 						<!-- Title -->
 						<div class="row with-forms">
-							<div class="col-md-12">
-								<h5>Place</h5>
-								<select name="place_id" class="chosen-select-no-single" >
-									<option label="blank">Select Place</option>	
+                            <div class="col-md-12">
+                                <h5>Place</h5>
+                                <select name="place_id" class="chosen-select-no-single">
+                                    <option label="blank">Select Place</option>
                                     @forelse ($places as $place)
-                                        <option value="{{ $place->id }}">{{ $place->name }}</option>
+                                        <option value="{{ $place->id }}" {{ old('place_id') == $place->id ? 'selected' : '' }}>{{ $place->name }}</option>
                                     @empty
-                                        <option value="" disabled>Empty Place</option> <!-- Display if no categories available -->
+                                        <option value="" disabled>Empty Place</option>
                                     @endforelse
-								</select>
-							</div>
+                                </select>
+                            </div>                        
                             <!-- Field for Stock A plus -->
                             <div class="col-md-12">
                                 <h5>Nama Darah <i class="tip" data-tip-content="Nama jenis darah"></i></h5>
-                                <input placeholder="Nama Darah" name="name" class="search-field" type="text"/>
+                                <input placeholder="Nama Darah" name="name" class="search-field" type="text" value="{{old('name')}}"/>
                             </div>
                             
                             <div class="col-md-12">
                                 <h5>Stock A+ <i class="tip" data-tip-content="Jumlah stock A+ dari tempat kamu"></i></h5>
-                                <input placeholder="Stock A+" name="A_plus" class="search-field" type="number"/>
+                                <input placeholder="Stock A+" name="A_plus" class="search-field" type="number" value="{{old('A_plus')}}"/>
                             </div>
                             
                             <!-- Add similar fields for other blood types -->
                             <!-- Field for Stock A minus -->
                             <div class="col-md-12">
                                 <h5>Stock A- <i class="tip" data-tip-content="Jumlah stock A- dari tempat kamu"></i></h5>
-                                <input placeholder="Stock A-" name="A_minus" class="search-field" type="number"/>
+                                <input placeholder="Stock A-" name="A_minus" class="search-field" type="number" value="{{old('A_minus')}}"/>
                             </div>
                             
                             <!-- Field for Stock B plus -->
                             <div class="col-md-12">
                                 <h5>Stock B+ <i class="tip" data-tip-content="Jumlah stock B+ dari tempat kamu"></i></h5>
-                                <input placeholder="Stock B+" name="B_plus" class="search-field" type="number"/>
+                                <input placeholder="Stock B+" name="B_plus" class="search-field" type="number" value="{{old('B_plus')}}"/>
                             </div>
                             
                             <!-- Field for Stock B minus -->
                             <div class="col-md-12">
                                 <h5>Stock B- <i class="tip" data-tip-content="Jumlah stock B- dari tempat kamu"></i></h5>
-                                <input placeholder="Stock B-" name="B_minus" class="search-field" type="number"/>
+                                <input placeholder="Stock B-" name="B_minus" class="search-field" type="number" value="{{old('B_minus')}}" />
                             </div>
                             
                             <!-- Add similar fields for other blood types (AB+, AB-, O+, O-) -->
-                            <!-- Field for Stock AB plus -->
+                            <!-- Field for Stock AB+ -->
                             <div class="col-md-12">
                                 <h5>Stock AB+ <i class="tip" data-tip-content="Jumlah stock AB+ dari tempat kamu"></i></h5>
-                                <input placeholder="Stock AB+" name="AB_plus" class="search-field" type="number"/>
+                                <input placeholder="Stock AB+" name="AB_plus" class="search-field" type="number" value="{{ old('AB_plus') }}"/>
                             </div>
-                            
-                            <!-- Field for Stock AB minus -->
+
+                            <!-- Field for Stock AB- -->
                             <div class="col-md-12">
                                 <h5>Stock AB- <i class="tip" data-tip-content="Jumlah stock AB- dari tempat kamu"></i></h5>
-                                <input placeholder="Stock AB-" name="AB_minus" class="search-field" type="number"/>
+                                <input placeholder="Stock AB-" name="AB_minus" class="search-field" type="number" value="{{ old('AB_minus') }}"/>
                             </div>
-                            
-                            <!-- Field for Stock O plus -->
+
+                            <!-- Field for Stock O+ -->
                             <div class="col-md-12">
                                 <h5>Stock O+ <i class="tip" data-tip-content="Jumlah stock O+ dari tempat kamu"></i></h5>
-                                <input placeholder="Stock O+" name="O_plus" class="search-field" type="number"/>
+                                <input placeholder="Stock O+" name="O_plus" class="search-field" type="number" value="{{ old('O_plus') }}"/>
                             </div>
-                            
-                            <!-- Field for Stock O minus -->
+
+                            <!-- Field for Stock O- -->
                             <div class="col-md-12">
                                 <h5>Stock O- <i class="tip" data-tip-content="Jumlah stock O- dari tempat kamu"></i></h5>
-                                <input placeholder="Stock O-" name="O_minus" class="search-field" type="number"/>
-                            </div>                            
+                                <input placeholder="Stock O-" name="O_minus" class="search-field" type="number" value="{{ old('O_minus') }}"/>
+                            </div>
 						</div>
                         <button type="submit" class="button preview">Tambah <i class="fa fa-arrow-circle-right"></i></button>
 					</form>

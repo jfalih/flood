@@ -40,7 +40,7 @@ class HomeController extends Controller
         }
 
         // Mem-paginate hasil dengan 10 tempat per halaman
-        $places = $query->paginate(4, ['*'], 'page', $page);
+        $places = $query->paginate(20, ['*'], 'page', $page);
     
         // Jika tidak ada hasil, kembalikan halaman 404
         if ($places->isEmpty()) {

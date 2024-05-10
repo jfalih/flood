@@ -360,12 +360,13 @@ if(document.getElementById("map") !== null){
     var locations = places.map((place, index) => {
         var url = placeUrl.replace(':id', place.id); // Replace the placeholder with the actual place ID
         var thumbnailUrl = '{{ asset("storage/images") }}' + '/' + place.image1; // Concatenate asset URL with image path
+        var iconCategory = place.category.icon
         return [
             locationData(url, thumbnailUrl, place.name, place.address), 
             parseFloat(place.latitude), 
             parseFloat(place.longitude), 
             index + 1, 
-            '<i class="im im-icon-Clinic"></i>'
+            '<i class="'+ iconCategory +'"></i>'
         ]
     });
 

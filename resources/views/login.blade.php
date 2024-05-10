@@ -54,13 +54,13 @@
 						<div class="row with-forms">
 							<div class="col-md-12">
 								<h5>E-mail <i class="tip" data-tip-content="Email kamu yang terdaftar"></i></h5>
-								<input name="email" placeholder="Alamat E-mail" class="search-field" type="email" value=""/>
+								<input name="email" placeholder="Alamat E-mail" class="search-field" type="email" value="{{old('email')}}"/>
 							</div>
 						</div>
 						<div class="row with-forms">
 							<div class="col-md-12">
 								<h5>Password <i class="tip" data-tip-content="Password akun kamu"></i></h5>
-								<input name="password" placeholder="Password" class="search-field" type="password" value=""/>
+								<input name="password" placeholder="Password" class="search-field" type="password" value="{{old('password')}}"/>
 							</div>
 						</div>
                         <div class="row">

@@ -178,10 +178,11 @@
 				</div>
 			</div>
 		</div>
-
 		<!-- Sidebar
 		================================================== -->
 		<div class="col-lg-4 col-md-4 margin-top-75 sticky">
+
+            @if($place->category->name == "PMI")
 			<!-- Book Now -->
 			<form method="POST" action="{{route('booking', $place)}}" class="boxed-widget booking-widget margin-top-35">
                 @csrf
@@ -198,7 +199,6 @@
 				<button type="submit" class="button book-now fullwidth margin-top-5">Menjadi Pendonor</button>
 			</form>
 			<!-- Book Now / End -->
-            @if($place->category->name == "PMI")
 			<!-- Opening Hours -->
 			<div class="boxed-widget opening-hours margin-top-35">
 				<div class="listing-badge now-closed">Stock Darah</div>
@@ -241,7 +241,6 @@
 			<!-- Opening Hours / End -->
 		</div>
 		<!-- Sidebar / End -->
-
 	</div>
 </div>
 

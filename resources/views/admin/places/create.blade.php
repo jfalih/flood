@@ -70,31 +70,31 @@
 							</div>
 							<div class="col-md-12">
 								<h5>Place Name <i class="tip" data-tip-content="Nama tempat yang ingin ditambah"></i></h5>
-								<input name="name" placeholder="Place Name" class="search-field" type="text" value=""/>
+								<input name="name" placeholder="Place Name" class="search-field" type="text" value="{{old('name')}}"/>
 							</div>
 							<div class="col-md-12">
 								<h5>Place Address <i class="tip" data-tip-content="Alamat tempat kamu"></i></h5>
-								<input name="address" placeholder="Address" class="search-field" type="text" value=""/>
+								<input name="address" placeholder="Address" class="search-field" type="text" value="{{old('address')}}"/>
 							</div>
 							<div class="col-md-12">
 								<h5>Place Description <i class="tip" data-tip-content="Deskripsi tempat kamu"></i></h5>
-								<input name="description" placeholder="Description" class="search-field" type="text" value=""/>
+								<input name="description" placeholder="Description" class="search-field" type="text" value="{{old('description')}}"/>
 							</div>
 							<div class="col-md-6">
 								<h5>Latitude <i class="tip" data-tip-content="Deskripsi tempat kamu"></i></h5>
-								<input name="latitude" placeholder="Latitude" class="search-field" type="text" value=""/>
+								<input name="latitude" placeholder="Latitude" class="search-field" type="text" value="{{old('latitude')}}"/>
 							</div>
 							<div class="col-md-6">
 								<h5>Longitude <i class="tip" data-tip-content="Deskripsi tempat kamu"></i></h5>
-								<input name="longitude" placeholder="Longitude" class="search-field" type="text" value=""/>
+								<input name="longitude" placeholder="Longitude" class="search-field" type="text" value="{{old('longitude')}}"/>
 							</div>
 							<div class="col-md-6">
 								<h5>E-mail <i class="tip" data-tip-content="E-mail tempat kamu"></i></h5>
-								<input name="email" placeholder="Alamat E-mail" class="search-field" type="text" value=""/>
+								<input name="email" placeholder="Alamat E-mail" class="search-field" type="text" value="{{old('email')}}"/>
 							</div>
 							<div class="col-md-6">
 								<h5>Phone <i class="tip" data-tip-content="Nomor Hp tempat kamu"></i></h5>
-								<input name="phone" placeholder="Phone" class="search-field" type="text" value=""/>
+								<input name="phone" placeholder="Phone" class="search-field" type="text" value="{{old('phone')}}"/>
 							</div>
 							<div class="col-md-3">
 								<h5>Gambar<i class="tip" data-tip-content="Name of your business"></i></h5>

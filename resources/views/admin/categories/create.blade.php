@@ -58,11 +58,11 @@
 						<div class="row with-forms">
 							<div class="col-md-12">
 								<h5>Category Title <i class="tip" data-tip-content="Name of your business"></i></h5>
-								<input name="name" class="search-field" type="text" value=""/>
+								<input name="name" class="search-field" type="text" value="{{old('name')}}"/>
 							</div>
 							<div class="col-md-12">
 								<h5>Category Icon <i class="tip" data-tip-content="Name of your business"></i></h5>
-								<input name="icon" class="search-field" type="text" value=""/>
+								<input name="icon" class="search-field" type="text" value="{{old('icon')}}"/>
 							</div>
 							<div class="col-md-12">
 								<h5>Category Background Image<i class="tip" data-tip-content="Name of your business"></i></h5>
